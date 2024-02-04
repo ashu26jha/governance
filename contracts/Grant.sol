@@ -38,7 +38,7 @@ contract Grant  {
     mapping(uint256 => Proposal) private proposals;
 
     constructor()   {
-        GirlScriptToken tokenaddress = new GirlScriptToken() ;
+        GirlScriptToken tokenaddress = new GirlScriptToken(address(this)) ;
         girlscriptAddress = address(tokenaddress);
         owner = msg.sender;
     }
