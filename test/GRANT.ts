@@ -26,5 +26,14 @@ describe("GirlScriptToken", function () {
         });
 
     });
+    describe("Token Management", function () {
+        it("Should allow buying GirlScriptToken", async function () {
+          await grant.buyGirlScriptToken({ value: 100 });
+        });
+    
+        it("Should revert if insufficient ether sent to buy GirlScriptToken", async function () {
+          await expect(grant.buyGirlScriptToken({ value: 50 })).to.be.reverted;
+        });
+      });
 
 });
