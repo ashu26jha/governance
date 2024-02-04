@@ -21,6 +21,9 @@ describe("GirlScriptToken", function () {
         it("Should set the correct owner and GirlScriptToken address", async function () {
             expect(await grant.owner()).to.equal(owner.address);
         });
+        it("Should start with currentID as 0", async function () {
+            expect(await grant.getCurrentID()).to.equal(0);
+        });
 
     });
 
