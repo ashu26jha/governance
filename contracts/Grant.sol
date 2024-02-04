@@ -145,6 +145,10 @@ contract Grant  {
         return proposals[id].proposer;
     }
 
+    function getCurrentID() public view returns (uint256){
+        return currentID;
+    }
+
     function getDescLink(uint256 id) public view returns (string memory){
         return proposals[id].descriptionLink;
     }
@@ -175,6 +179,10 @@ contract Grant  {
 
     function getAmountStaked(uint256 id, address voter) public view returns (bool){
         return proposals[id].voted[voter];
+    }
+
+    function getGirlScriptAddress() public view returns (address){
+        return girlscriptAddress;
     }
 
 }
